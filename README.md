@@ -4,12 +4,13 @@ Python-based starter project for AI video automation.
 
 ## Features
 
-- Script and scene planning
+- Script and configurable multi-scene planning
 - ElevenLabs-compatible TTS integration (via environment variable)
-- Subtitle generation
-- FFmpeg video assembly (placeholder)
-- Vertical 9:16 export presets
+- Subtitle generation (SRT style)
+- FFmpeg command generation for video assembly
+- Multiple export presets (9:16 vertical, 1:1 square, 16:9 landscape)
 - Configurable output resolution
+- Basic unit tests and CI workflow
 
 Use environment variables for API credentials. Do not commit keys.
 
@@ -29,9 +30,10 @@ cp .env.example .env  # add ELEVENLABS_API_KEY
 
 ```bash
 python pipeline.py
+python -m unittest test_pipeline.py -v
 ```
 
-Extend the functions to call real TTS APIs and FFmpeg commands.
+Extend the functions to call real TTS APIs and execute FFmpeg commands.
 
 ## Notes
 
